@@ -1,5 +1,5 @@
 apiVersion: certmanager.k8s.io/v1alpha1
-kind: Certifcate
+kind: Certificate
 metadata:
   name: k8-yellowpepper-com
 spec:
