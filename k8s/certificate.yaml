@@ -1,0 +1,20 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certifcate
+metadata:
+  name: k8-yellowpepper-com
+spec:
+  secretName: k8-yellowpepper-com
+  issuerref:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: k8.yellowpepper.com
+  dnsNames:
+    - k8.yellowpepper.com
+    - www.k8.yellowpepper.com
+  acme:
+    config:
+      - http01:
+          ingressClass: nginx
+        domains:
+          - k8.yellowpepper.com
+          - www.k8.yellowpepper.com
